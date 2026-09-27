@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Produk — Admin Mita Maubel</title>
+<link rel="icon" href="../images/logo.png">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="sidebar" id="admin-sidebar">
+    <div class="sidebar__brand">
+      <img src="../images/logo.png" alt="Logo">
+      <div><strong>Mita Maubel</strong><small>Panel Admin</small></div>
+    </div>
+    <nav class="sidebar__nav" id="admin-sidebar-nav"></nav>
+    <div class="sidebar__foot">
+      <a href="#" id="admin-logout">&#10148; Keluar</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar-admin">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+        <div>
+          <h1 id="admin-page-title">Produk</h1>
+          <div class="muted" id="admin-page-sub">Tambah, ubah, dan hapus produk</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="../index.html" class="view-site-btn" target="_blank" rel="noopener">Lihat Situs</a>
+        <div class="admin-user"><div class="avatar">A</div><span>Admin</span></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="panel">
+        <div class="panel__head">
+          <h3>Daftar Produk</h3>
+          <button class="btn btn--primary btn--sm" id="produk-add-btn">+ Tambah Produk</button>
+        </div>
+        <div class="panel__body">
+          <div class="admin-filter" style="margin-bottom:18px;">
+            <input type="search" id="produk-search" placeholder="Cari nama produk...">
+            <select id="produk-filter-kategori"></select>
+            <select id="produk-filter-status">
+              <option value="">Semua Status</option>
+              <option value="tersedia">Tersedia</option>
+              <option value="habis">Habis</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Foto</th><th>Produk</th><th>Kategori</th><th>Harga</th><th>Unggulan</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody id="produk-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Tambah/Edit Produk -->
+<div class="modal-overlay" id="produk-modal">
+  <div class="modal">
+    <div class="modal__head">
+      <h3 id="produk-modal-title">Tambah Produk</h3>
+      <button class="modal__close" data-close>&times;</button>
+    </div>
+    <form id="produk-form">
+      <div class="modal__body">
+        <div class="form-grid">
+          <div class="field full">
+            <label>Gambar Produk</label>
+            <div class="img-preview" id="f-gambar-preview">Belum ada gambar</div>
+            <input type="file" id="f-gambar-file" accept="image/*">
+            <span class="hint">Unggah foto produk (disimpan di browser untuk demo ini).</span>
+          </div>
+          <div class="field full">
+            <label for="f-nama">Nama Produk</label>
+            <input type="text" id="f-nama" name="nama" required placeholder="mis. Lemari Pakaian 2 Pintu">
+          </div>
+          <div class="field">
+            <label for="f-kategori">Kategori</label>
+            <input type="text" id="f-kategori" name="kategori" required list="kategori-list" placeholder="mis. Lemari">
+            <datalist id="kategori-list">
+              <option value="Lemari"><option value="Meja"><option value="Kursi">
+              <option value="Tempat Tidur"><option value="Rak">
+            </datalist>
+          </div>
+          <div class="field">
+            <label for="f-harga">Harga (Rp)</label>
+            <input type="number" id="f-harga" name="harga" min="0" required placeholder="3500000">
+          </div>
+          <div class="field">
+            <label for="f-ukuran">Ukuran</label>
+            <input type="text" id="f-ukuran" name="ukuran" required placeholder="mis. 120 x 80 cm">
+          </div>
+          <div class="field">
+            <label for="f-bahan">Bahan</label>
+            <input type="text" id="f-bahan" name="bahan" required placeholder="mis. Kayu Jati Solid">
+          </div>
+          <div class="field full">
+            <label for="f-deskripsi">Deskripsi</label>
+            <textarea id="f-deskripsi" name="deskripsi" placeholder="Deskripsi singkat produk"></textarea>
+          </div>
+          <div class="field">
+            <label for="f-status">Status</label>
+            <select id="f-status" name="status">
+              <option value="tersedia">Tersedia</option>
+              <option value="habis">Habis</option>
+            </select>
+          </div>
+          <div class="field" style="display:flex;align-items:center;">
+            <label style="display:flex;align-items:center;gap:8px;margin-top:22px;">
+              <input type="checkbox" id="f-unggulan" name="unggulan" style="width:auto;">
+              Tampilkan sebagai produk unggulan
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--outline" data-close>Batal</button>
+        <button type="submit" class="btn btn--primary">Simpan Produk</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="js/admin.js"></script>
+<script>
+  mmGuard();
+  mmRenderAdminShell('produk', 'Produk', 'Tambah, ubah, dan hapus produk');
+  mmInitProdukPage();
+</script>
+</body>
+</html>

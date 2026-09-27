@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesanan Custom — Admin Mita Maubel</title>
+<link rel="icon" href="../images/logo.png">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="sidebar" id="admin-sidebar">
+    <div class="sidebar__brand">
+      <img src="../images/logo.png" alt="Logo">
+      <div><strong>Mita Maubel</strong><small>Panel Admin</small></div>
+    </div>
+    <nav class="sidebar__nav" id="admin-sidebar-nav"></nav>
+    <div class="sidebar__foot">
+      <a href="#" id="admin-logout">&#10148; Keluar</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar-admin">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+        <div>
+          <h1 id="admin-page-title">Pesanan Custom</h1>
+          <div class="muted" id="admin-page-sub">Lihat dan kelola permintaan custom order pelanggan</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="../index.html" class="view-site-btn" target="_blank" rel="noopener">Lihat Situs</a>
+        <div class="admin-user"><div class="avatar">A</div><span>Admin</span></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="panel">
+        <div class="panel__head">
+          <h3>Daftar Pesanan Custom</h3>
+        </div>
+        <div class="panel__body">
+          <div class="admin-filter" style="margin-bottom:18px;">
+            <select id="pesanan-filter-status">
+              <option value="">Semua Status</option>
+              <option value="baru">Baru</option>
+              <option value="diproses">Diproses</option>
+              <option value="selesai">Selesai</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Tanggal</th><th>Pelanggan</th><th>Jenis</th><th>Ukuran</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody id="pesanan-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Detail Pesanan -->
+<div class="modal-overlay" id="pesanan-modal">
+  <div class="modal">
+    <div class="modal__head">
+      <h3>Detail Pesanan</h3>
+      <button class="modal__close" data-close>&times;</button>
+    </div>
+    <div class="modal__body" id="pesanan-modal-body"></div>
+    <div class="modal__foot">
+      <button type="button" class="btn btn--outline" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="js/admin.js"></script>
+<script>
+  mmGuard();
+  mmRenderAdminShell('pesanan', 'Pesanan Custom', 'Lihat dan kelola permintaan custom order pelanggan');
+  mmInitPesananPage();
+</script>
+</body>
+</html>

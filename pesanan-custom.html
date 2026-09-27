@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesanan Custom — Mita Maubel</title>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar__info">
+      <span>📍 <span data-mm="alamat">Jl. H. Hamka, Coppo, Kec. Barru</span></span>
+      <span>🕘 <span data-mm="jam">Setiap hari, 08.00–22.00</span></span>
+    </div>
+    <div class="topbar__info">
+      <span>📞 <a href="#" data-mm-wa="Halo Mita Maubel, saya ingin bertanya.">WhatsApp: <span data-mm="wa-display">0853-9883-0913</span></a></span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Logo Mita Maubel">
+      <span class="brand__text">
+        <span class="brand__name" data-mm="business-name">Mita Maubel</span>
+        <span class="brand__tag">Kayu Jati &middot; Custom Order</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-page="beranda">Beranda</a>
+      <a href="katalog.html" data-page="katalog">Katalog Produk</a>
+      <a href="pesanan-custom.html" data-page="custom" class="active">Pesanan Custom</a>
+      <a href="galeri.html" data-page="galeri">Galeri</a>
+      <a href="kontak.html" data-page="kontak">Hubungi Kami</a>
+      <a class="btn-wa" href="#" data-mm-wa="Halo Mita Maubel, saya ingin bertanya tentang produk mebel." target="_blank" rel="noopener">Chat WhatsApp</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section__head">
+      <div class="section__eyebrow">Pesanan Custom</div>
+      <h2>Wujudkan furniture sesuai keinginan Anda</h2>
+      <p class="muted">Isi detail di bawah ini selengkap mungkin. Tim kami akan menghubungi Anda lewat WhatsApp untuk konfirmasi harga dan estimasi waktu pengerjaan.</p>
+    </div>
+
+    <div class="form-panel">
+      <div class="form-success" id="custom-order-success"></div>
+      <form id="custom-order-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" required placeholder="Nama Anda">
+          </div>
+          <div class="field">
+            <label for="kontak">Nomor WhatsApp</label>
+            <input type="tel" id="kontak" name="kontak" required placeholder="08xxxxxxxxxx">
+          </div>
+
+          <div class="field">
+            <label for="jenis">Jenis Furniture</label>
+            <select id="jenis" name="jenis" required>
+              <option value="">Pilih jenis</option>
+              <option>Lemari</option>
+              <option>Meja</option>
+              <option>Kursi</option>
+              <option>Tempat Tidur</option>
+              <option>Rak</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ukuran">Ukuran yang Diinginkan</label>
+            <input type="text" id="ukuran" name="ukuran" placeholder="mis. 150 x 80 x 90 cm" required>
+          </div>
+
+          <div class="field">
+            <label for="bahan">Bahan</label>
+            <select id="bahan" name="bahan" required>
+              <option value="">Pilih bahan</option>
+              <option>Kayu Jati Solid</option>
+              <option>Kayu Jati Tua</option>
+              <option>Kayu Mahoni</option>
+              <option>Multiplek Lapis Jati</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="warna">Warna / Finishing</label>
+            <input type="text" id="warna" name="warna" placeholder="mis. coklat tua, natural">
+          </div>
+
+          <div class="field full">
+            <label for="model">Model / Desain</label>
+            <textarea id="model" name="model" placeholder="Ceritakan model yang diinginkan, mis. minimalis tanpa ukiran, gaya klasik, dsb."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="catatan">Catatan Tambahan</label>
+            <textarea id="catatan" name="catatan" placeholder="Catatan lain, mis. jumlah pintu, laci, lokasi pengiriman, dsb."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="gambarRef">Upload Gambar Referensi (opsional)</label>
+            <input type="file" id="gambarRef" name="gambarRef" accept="image/*">
+            <span class="hint">Nama file akan dicatat bersama pesanan Anda — kirimkan gambar aslinya lewat WhatsApp setelah submit.</span>
+          </div>
+        </div>
+
+        <p class="form-note">Dengan mengirim formulir ini, pesanan akan tersimpan di sistem kami dan Anda akan diarahkan untuk mengonfirmasi lewat WhatsApp.</p>
+        <div style="margin-top:20px;">
+          <button type="submit" class="btn btn--primary">Kirim Pesanan Custom</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Logo Mita Maubel">
+          <span>Mita Maubel</span>
+        </div>
+        <p data-mm="deskripsi">Mita Maubel adalah usaha mebel rumahan yang mengerjakan setiap produk dengan tangan menggunakan kayu jati pilihan.</p>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="katalog.html">Katalog Produk</a></li>
+          <li><a href="pesanan-custom.html">Pesanan Custom</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="katalog.html?kategori=Lemari">Lemari</a></li>
+          <li><a href="katalog.html?kategori=Meja">Meja</a></li>
+          <li><a href="katalog.html?kategori=Kursi">Kursi</a></li>
+          <li><a href="katalog.html?kategori=Kusen">Kusen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li data-mm="alamat">Jl. H. Hamka, Coppo, Kec. Barru</li>
+          <li><a href="#" data-mm-wa="Halo Mita Maubel, saya ingin bertanya.">WhatsApp: <span data-mm="wa-display">0853-9883-0913</span></a></li>
+          <li data-mm="jam">Setiap hari, 08.00–22.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mita Maubel. Seluruh hak cipta dilindungi.</span>
+      <a href="admin/index.html">Login Admin</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp"></a>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  mmInitChrome('custom');
+  mmInitCustomOrderForm();
+</script>
+</body>
+</html>
